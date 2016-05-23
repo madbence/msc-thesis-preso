@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.2.1">
-<info created="D:20160523183558" modified="D:20160523185410" tex="xetex"/>
+<info created="D:20160523183558" modified="D:20160523191612" tex="xetex"/>
 <preamble>\usepackage{xltxtra}
 \setmainfont{Helvetica Neue LT Pro 55 Roman}
 </preamble>
@@ -340,5 +340,13 @@ h
 408 584 l
 </path>
 <text matrix="1 0 0 1 0 -80" pos="272 704" stroke="black" type="label" width="52.555" height="5.832" depth="1.58" halign="center" valign="center" size="footnote">(js, css, képek)</text>
+<path stroke="black" dash="dashed">
+416 544 m
+416 512 l
+512 512 l
+512 544 l
+h
+</path>
+<text matrix="1 0 0 1 192 -176" pos="272 704" stroke="black" type="label" width="52.583" height="7.123" depth="0.11" halign="center" valign="center">WebWorker</text>
 </page>
 </ipe>
