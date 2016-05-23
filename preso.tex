@@ -1,0 +1,81 @@
+\documentclass[xetex]{beamer}
+
+\usepackage{xltxtra}
+\usepackage{xcolor}
+\usepackage[hungarian]{babel}
+
+\title{Diplomaterv 1.\\Valósidejű multiplayer böngészős játék fejlesztése}
+\author{Dányi Bence\\\tiny{Konzulens: Imre Gábor}}
+
+\setsansfont{Helvetica Neue LT Pro 55 Roman}
+
+\usetheme{Rochester}
+\beamertemplatenavigationsymbolsempty
+
+\begin{document}
+  \frame{\titlepage}
+  \begin{frame}
+    \frametitle{A feladat}
+    \begin{itemize}
+      \item 2D böngészős űrhajós akciójáték
+      \item Realisztikus fizikai modell
+      \item \textit{Szkriptelhető vezérlés}
+      \item \textit{Alapszintű mesterséges intelligencia}
+      \item Tesztelés
+      \item Sávszélességbarát Websocket kapcsolat
+      \item Igényes grafika
+      \item Üzemeltetési megoldás, éles környezetbe kihelyezés
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Architektúra}
+    \includegraphics[width=\textwidth]{arch}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Fizikai modell}
+    \begin{itemize}
+      \item Űrhajó: kiterjedt merev test
+      \item Forgatónyomaték és erő hat rá
+      \item A felírt differenciálegyenlet megoldása numerikus módszerekkel (Euler módszer)
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Tesztelés}
+    \begin{itemize}
+      \item Unit/Integration tesztek: Mocha
+      \item Funkcionális programozás: tisztán $input \to output$
+      \item Perzisztens adatstruktúrák
+      \item Hivatkozási átlátszóság (referential transparency)
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Websocket kapcsolat}
+    \begin{itemize}
+      \item Determinisztikus működés: nincs szükség a teljes állapot szinkronizálására
+      \item Elegendő a nem determinisztikus eseményeket elküldeni (felhasználó inputja)
+      \item Lag csökkentése: lokális predikció
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Grafika}
+    \begin{itemize}
+      \item WebGL (OpenGL ES 2.0 alapú API, JS bindinggal)
+      \item Nincs fixed pipeline: csúcspont és fragmens árnyalók
+    \end{itemize}
+    % TODO: KÉP
+  \end{frame}
+  \begin{frame}
+    \frametitle{Üzemeltetés}
+    \begin{itemize}
+      \item Continous Integration: Travis
+      \item Deploy eszköz: Ansible
+      \item \texttt{yml} leírófájl a szolgáltatáshoz
+      \item SSH kapcsolaton keresztül
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \begin{center}
+      {\Large Köszönöm a figyelmet! Kérdések? }
+    \end{center}
+  \end{frame}
+\end{document}
